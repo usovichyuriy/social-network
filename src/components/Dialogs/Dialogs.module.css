@@ -1,0 +1,62 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 5fr 10fr;
+}
+
+.dialogs button {
+    background-color: rgb(22, 25, 42);
+    color: white;
+    border: none;
+    cursor: pointer;
+    min-width: 30px;
+    min-height: 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    padding: 10px;
+    text-transform: none;
+}
+
+.dialogs button:hover {
+    background-color: rgb(58, 67, 112);
+    color: white;
+}
+
+.dialogs button:disabled {
+    background-color: rgb(229, 223, 242);
+    color: black;
+}
+
+.dialogs input {
+    border: 2px solid rgb(22, 25, 42);
+    border-radius: 20px;
+    background-color: rgb(58, 67, 112);
+    color: white;
+    min-width: 600px;
+    min-height: 40px;
+    margin-top: 15px;
+    padding-left: 10px;
+}
+
+.dialogsItems {
+    padding: 10px;
+    text-align: center;
+    border-right: 2px solid rgb(22, 25, 42);
+}
+
+.dialogsItems .active {
+    color: rgb(22, 25, 42);
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+    background-color: rgb(22, 25, 42);
+}
+
+.messagesWrapper {
+    overflow-y: scroll;
+    max-height: 600px;
+}

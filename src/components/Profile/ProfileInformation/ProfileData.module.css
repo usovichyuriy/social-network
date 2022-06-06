@@ -1,0 +1,25 @@
+.status {
+    padding-left: 20px;
+}
+
+.fullName {
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.profileData {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.profileData span {
+    font-weight: bold;
+}
+
+.contacts {
+    margin-top: 20px;
+}
+
+.dataBlock {
+    display: flex;
+}

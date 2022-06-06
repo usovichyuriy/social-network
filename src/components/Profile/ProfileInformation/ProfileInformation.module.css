@@ -1,0 +1,21 @@
+.profileDescription {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.profileDescription img {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 100px;
+}
+
+.userAvatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.changePhotoButton {
+    margin-top: 5px;
+}

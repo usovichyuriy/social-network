@@ -1,0 +1,33 @@
+.app-wrapper {
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-areas: 
+    "header header"
+    "nav content";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+}
+
+@media (max-width: 1200px) {
+    .app-wrapper {
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 992px) {
+    .app-wrapper {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 767px) {
+    .app-wrapper {
+        max-width: none;
+    }
+}
+
+.app-wrapper-content {
+    grid-area: content;
+    background-color: rgb(150, 200, 233);
+}

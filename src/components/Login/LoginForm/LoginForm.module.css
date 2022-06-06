@@ -1,0 +1,38 @@
+.loginFormEmail {
+    margin-bottom: 10px;
+}
+
+.loginFormCheckbox {
+    padding: 5px 0px;
+}
+
+.loginFormButton {
+    display: flex;
+    justify-content: space-around;
+}
+
+.loginFormButton button {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(22, 25, 42);
+    color: white;
+    border: 3px solid rgb(22, 25, 42);
+    border-radius: 10px;
+}
+
+.loginFormButton button:hover {
+    background-color: rgb(240, 104, 107);
+    border-color: rgb(240, 104, 107);
+}
+
+.loginFormButton button:disabled {
+    background-color: rgb(229, 223, 242);
+    border: 3px solid rgb(229, 223, 242);
+    color: black;
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+}

@@ -1,0 +1,31 @@
+.loginBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; 
+    padding: 40px;
+    background-color: white;
+    max-width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.testAccountInformation {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.testAccountInformation h3 {
+    text-align: center;
+}
+
+.testEmail, .testPassword {
+    display: flex;
+}
+
+.testEmail span, .testPassword span {
+    margin-left: 10px;
+}
