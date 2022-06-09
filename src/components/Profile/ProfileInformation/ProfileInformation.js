@@ -46,8 +46,13 @@ function ProfileInformation(props) {
                     <div className={classes.changePhotoButton}>
                         {!props.isOwner &&
                             <label htmlFor="icon-button-file">
-                                <Input accept="image/*" id="icon-button-file" type="file" onChange={onMainPhotoChanged} />
-                                <IconButton color="primary" aria-label="upload picture" component="span">
+                                <Input accept="image/*" 
+                                       id="icon-button-file" 
+                                       type="file" 
+                                       onChange={onMainPhotoChanged} />
+                                <IconButton color="primary" 
+                                            aria-label="upload picture" 
+                                            component="span">
                                     <PhotoCamera />
                                 </IconButton>
                             </label>}
@@ -61,7 +66,8 @@ function ProfileInformation(props) {
                                          updateProfile={props.updateProfile} /> : 
                         <ProfileData profile={props.profile} 
                                      status={props.status} 
-                                     isOwner={props.isOwner} 
+                                     isOwner={props.isOwner}
+                                     updateStatus={props.updateStatus} 
                                      activateEditMode={activateEditMode} />}
                 </div>
 

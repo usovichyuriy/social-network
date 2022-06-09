@@ -24,12 +24,12 @@ const ProfileStatus = (props) => {
 
     return (
         <div>
-            {props.isOwner && editMode ?
+            {!props.isOwner && editMode ?
                 <div>
                     <input onChange={onStatusChange} autoFocus={true} onBlur={deactivateEditMode} value={status}  />
                 </div> :
                 <div>
-                    <span onClick={activateEditMode}>{status}</span>
+                    <span onClick={activateEditMode}>{status || 'Click here to add a status'}</span>
                 </div>}
         </div>
     )

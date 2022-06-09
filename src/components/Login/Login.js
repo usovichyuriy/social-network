@@ -33,15 +33,15 @@ const Login = (props) => {
                     <h3>Test email and password:</h3>
                     <div className={classes.testEmail}>
                         <EmailIcon />
-                        <span> free@samuraijs.com</span>
-                        <CopyToClipboard text="free@samuraijs.com">
+                        <span> snfree2022@gmail.com</span>
+                        <CopyToClipboard text="snfree2022@gmail.com">
                             <Button><ContentCopyIcon sx={{width: 20, height: 20}} /></Button>
                         </CopyToClipboard>
                     </div>
                     <div className={classes.testPassword}>
                         <KeyIcon />
-                        <span> free</span>
-                        <CopyToClipboard text="free">
+                        <span> free2022</span>
+                        <CopyToClipboard text="free2022">
                             <Button><ContentCopyIcon sx={{width: 20, height: 20}} /></Button>
                         </CopyToClipboard>
                     </div>
