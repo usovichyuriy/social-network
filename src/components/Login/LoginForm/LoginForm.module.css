@@ -36,3 +36,9 @@
     font-size: 15px;
     font-weight: bold;
 }
+
+.captcha {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}

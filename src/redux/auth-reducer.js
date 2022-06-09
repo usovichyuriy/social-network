@@ -1,7 +1,7 @@
 import { authAPI } from "../api/api";
+import { getCaptchaUrl, setCaptchaUrl } from "./security-reducer";
 
 const SET_USER_DATA = 'SET_USER_DATA';
-const SET_LOGOUT_DATA = 'SET_LOGIN_DATA';
 
 let initialState = {
     userId: null,
@@ -15,14 +15,7 @@ const authReducer = (state = initialState, action) => {
         case SET_USER_DATA:
             return {
                 ...state,
-                ...action.data,
-                isAuth: true
-            }
-        case SET_LOGOUT_DATA:
-            return {
-                ...state,
-                ...action.data,
-                isAuth: false
+                ...action.data
             }
         default:
             return state;
@@ -35,13 +28,6 @@ export const setAuthUserData = (userId, email, login, isAuth) => {
     }
 }
 
-export const setLogoutUserData = (userId, email, login, isAuth) => {
-    return {
-        type: SET_LOGOUT_DATA, data: { userId, email, login, isAuth }
-    }
-}
-
-
 export const getAuthUserData = () => {
     return async (dispatch) => {
         let response = await authAPI.getAuthUserData();
@@ -52,11 +38,14 @@ export const getAuthUserData = () => {
     }
 }
 
-export const loginUser = ({ email, password }) => {
+export const loginUser = ({ email, password, rememberMe, captcha }) => {
     return async (dispatch) => {
-        let response = await authAPI.loginUser({ email, password })
+        let response = await authAPI.loginUser({ email, password, rememberMe, captcha })
         if (response.data.resultCode === 0) {
             dispatch(getAuthUserData());
+        }
+        else if (response.data.resultCode === 10) {
+            dispatch(getCaptchaUrl());
         }
     }
 }
@@ -65,7 +54,8 @@ export const logoutUser = () => {
     return async (dispatch) => {
         let response = await authAPI.logoutUser()
         if (response.data.resultCode === 0) {
-            dispatch(setLogoutUserData(null, null, null, false));
+            dispatch(setCaptchaUrl({url: null}));
+            dispatch(setAuthUserData(null, null, null, false));
         }
     }
 }

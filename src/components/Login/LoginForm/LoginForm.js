@@ -11,7 +11,8 @@ const LoginForm = (props) => {
         initialValues: {
             email: '',
             password: '',
-            rememberMe: false
+            rememberMe: false,
+            captcha: ''
         },
 
         validate: (formData) => {
@@ -68,6 +69,18 @@ const LoginForm = (props) => {
                     <Checkbox type={'checkbox'} name={'rememberMe'} onChange={formik.handleChange} />
                     <label htmlFor={'rememberMe'}> remember me </label>
                 </div>
+                {props.security.url &&
+                    <div className={classes.captcha}>
+                        <img src={props.security.url} />
+                        <TextField
+                            fullWidth
+                            id="captcha"
+                            name="captcha"
+                            label="captcha"
+                            value={formik.values.captcha}
+                            onChange={formik.handleChange}
+                        />
+                    </div>}
                 <div className={classes.loginFormButton}>
                     <Button variant="contained" fullWidth type="submit">
                         Login

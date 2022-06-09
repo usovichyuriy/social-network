@@ -25,7 +25,9 @@ const Login = (props) => {
         return (
             <div className={classes.loginBlock}>
                 <h1>Login</h1>
-                <LoginForm loginUser={props.loginUser} getAuthUserData={props.getAuthUserData} />
+                <LoginForm loginUser={props.loginUser}
+                           getAuthUserData={props.getAuthUserData}
+                           security={props.security} />
                 <div className={classes.testAccountInformation}>
                     <Divider />
                     <h3>Test email and password:</h3>
@@ -50,6 +52,7 @@ const Login = (props) => {
 };
 
 let mapStateToProps = (state) => ({
-    auth: state.auth
+    auth: state.auth,
+    security: state.security
 })
 export default connect(mapStateToProps, { loginUser, getAuthUserData })(Login);
