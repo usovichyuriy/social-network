@@ -27,7 +27,8 @@ const Login = (props) => {
                 <h1>Login</h1>
                 <LoginForm loginUser={props.loginUser}
                            getAuthUserData={props.getAuthUserData}
-                           security={props.security} />
+                           security={props.security}
+                           errorMessages={props.auth.errorMessage} />
                 <div className={classes.testAccountInformation}>
                     <Divider />
                     <h3>Test email and password:</h3>

@@ -81,6 +81,10 @@ const LoginForm = (props) => {
                             onChange={formik.handleChange}
                         />
                     </div>}
+                {props.errorMessages !== null &&
+                    <div>
+                        <span className={classes.errorMessage}>{props.errorMessages[0]}</span>
+                    </div>}
                 <div className={classes.loginFormButton}>
                     <Button variant="contained" fullWidth type="submit">
                         Login
