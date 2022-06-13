@@ -82,8 +82,10 @@ const LoginForm = (props) => {
                         />
                     </div>}
                 {props.errorMessages !== null &&
-                    <div>
-                        <span className={classes.errorMessage}>{props.errorMessages[0]}</span>
+                    <div className={classes.errors}>
+                        <span className={classes.errorMessage}>
+                            {props.errorMessages[0]}
+                        </span>
                     </div>}
                 <div className={classes.loginFormButton}>
                     <Button variant="contained" fullWidth type="submit">

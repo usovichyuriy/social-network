@@ -2,9 +2,13 @@ import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 import React from 'react';
 import MyPostsForm from './MyPostsForm/MyPostsForm';
+import Preloader from '../../common/Preloader/Preloader';
 
 function MyPosts(props) {
-
+    
+    if(!props.profilePage) {
+        return <Preloader />
+    }
     let postsElements = props.profilePage.postsData.map((post) => {
         return <Post message={post.message} likesCount={post.likesCount} profile={props.profilePage.profile} />
     })

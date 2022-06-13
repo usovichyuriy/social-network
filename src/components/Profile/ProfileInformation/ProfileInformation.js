@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import classes from './ProfileInformation.module.css';
 import { Avatar } from '@mui/material';
-import { deepPurple } from '@mui/material/colors';
 import Preloader from '../../common/Preloader/Preloader';
 import ProfileData from './ProfileData';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import ProfileDataForm from './ProfileDataForm';
+import { deepOrange } from '@mui/material/colors';
 
 
 function ProfileInformation(props) {
@@ -41,7 +41,7 @@ function ProfileInformation(props) {
                 <div className={classes.userAvatar} >
                     {props.profile.photos.small != null ?
                         <Avatar src={props.profile.photos.large} sx={{ width: 150, height: 150 }} /> :
-                        <Avatar sx={{ bgcolor: deepPurple[500], width: 150, height: 150, fontsize: 20 }}>
+                        <Avatar sx={{ bgcolor: deepOrange[500], width: 150, height: 150, fontsize: 20 }}>
                             {props.profile.fullName.charAt(0).toUpperCase()}</Avatar>}
                     <div className={classes.changePhotoButton}>
                         {!props.isOwner &&
